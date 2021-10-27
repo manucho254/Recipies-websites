@@ -46,13 +46,6 @@ function addMeal(mealData,  random = false) {
             removeMealLs(mealData.idMeal)
             btnFav.classList.remove("active");
         }
-        // if (btnFav.classList !== "active" && clicks === 1) {
-        //     const favmeal = document.createElement('li');
-        //     favmeal.classList.add("fav-meals");
-        //     favmeal.innerHTML = `
-        //     <img src="${mealData.strMealThumb}" alt="${mealData.strMeal}"><span>${mealData.strMeal}</span>
-        //     `
-        //     favMeals.appendChild(favmeal)
         else{
             addMealsLs(mealData.idMeal)
             btnFav.classList.toggle("active");
@@ -84,9 +77,7 @@ async function fetchFavMeals() {
     for (let i = 0; i < mealIds.length; i++) {
         const mealId = mealIds[i];
         meal = await getMealById(mealId);
-        meals.push(meal);
-    }
-    console.log(meals)
+        meals.append(meal);
+    };
+    console.log(meals);
 }
-
-
